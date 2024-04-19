@@ -1,0 +1,40 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.templateHeader {
+}
+
+.templateHeader__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    @include padding__safe;
+}
+
+.templateHeader__nav {
+    margin-left: 40px;
+    flex-grow: 1;
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        li:not(:last-child) {
+            margin-right: 30px;
+        }
+    }
+    li {
+        @include paragraph__p1;
+        @include transition__default;
+    }
+    li:hover {
+        color: $font-color__accent;
+    }
+}
+
+.templateHeader__rightNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}

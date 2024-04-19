@@ -1,0 +1,32 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+
+.sectionIntro  {
+    
+}
+
+.sectionIntro__container {
+}
+
+.sectionIntro__text {
+    max-width: 600px;
+    h6 {
+        @include paragraph__p3($font-color: $font-color__accent);
+        
+    }
+
+    h2 {
+        @include title__h2;
+    }
+    p {
+        @include paragraph__p1;
+    }
+}
+
+.sectionIntro__social {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

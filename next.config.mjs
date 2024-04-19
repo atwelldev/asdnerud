@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     env: {
-        APIURL: "127.0.0.1"
+        APIURL: process.env.APIURL
+    },
+    images: {
+        domains: [
+            "upload.wikimedia.org"
+        ]
     }
 };
 

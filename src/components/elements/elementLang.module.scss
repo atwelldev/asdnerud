@@ -1,0 +1,24 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+
+.elementLang {
+    cursor: pointer;
+    img {
+        margin-right: 7px;
+        border-radius: 4px;
+        @include box-shadow__main;
+    }
+    @include paragraph__p1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    p {
+        margin-right: 3px;
+    }
+    // background-color: red;
+    svg {
+        // background-color: aqua;
+    }
+}

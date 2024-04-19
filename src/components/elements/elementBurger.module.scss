@@ -1,0 +1,41 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+
+.elementBurger {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    cursor: pointer;
+    span, &::before, &::after {
+        content: "";
+        position: absolute;
+        background-color: $background-color__subdark;
+        height: 2px;
+        border-radius: 10px;
+        @include transition__default;
+    }
+
+    &::before {
+        top: 0;
+        width: 100%;
+    }
+    span {
+        width: 70%;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+    }
+    &::after {
+        width: 30%;
+        right: 0;
+        bottom: 0;
+    }
+
+    &:hover {
+        span, &::after, &::before {
+            width: 100%;
+            background-color: $background-color__accent;
+        }
+    }
+}

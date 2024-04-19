@@ -1,0 +1,31 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.elementTheme {
+    position: relative;
+    width: 45px;
+    cursor: pointer;
+    span {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0, -50%);
+        height: 1px;
+        width: 100%;
+        background-color: $background-color__sublight;
+        z-index: -1;
+    }
+}
+
+.elementTheme__circle {
+    position: relative;
+    height: 21px;
+    width: 21px;
+    left: 5px;
+    border-radius: 50%;
+    background-color: $background-color__light;
+    @include box-shadow__main;
+    
+}
+

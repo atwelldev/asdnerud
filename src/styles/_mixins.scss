@@ -1,0 +1,91 @@
+@import "./vars";
+
+// Gradients
+// @mixin gradient__background($deg: 135deg) {
+//     background: $background-color__dark;
+//     background: -moz-linear-gradient($deg, $background-color__dark 0%, rgba(21,22,27,1) 100%);
+//     background: -webkit-linear-gradient($deg, $background-color__dark 0%, rgba(21,22,27,1) 100%);
+//     background: linear-gradient($deg, $background-color__dark 0%, rgba(21,22,27,1) 100%);
+// }
+
+// @mixin gradient__accent($deg: 90deg) {
+//     background: $background-color__accent;
+//     background: -moz-linear-gradient($deg, $background-color__accent 0%, rgb(221, 238, 68) 100%);
+//     background: -webkit-linear-gradient($deg, $background-color__accent 0%, rgba(221,238,68,1) 100%);
+//     background: linear-gradient($deg, $background-color__accent 0%, rgba(221,238,68,1) 100%);
+// }
+
+// @mixin gradient__text($deg: 90deg) {
+//     color: $font-color__accent;
+//     background: -moz-linear-gradient($deg, $font-color__accent 0%, rgba(221, 238, 68, 1) 100%);
+//     background: -webkit-linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
+//     background: linear-gradient($deg, $font-color__accent 0%, rgba(221,238,68,1) 100%);
+
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+
+// @mixin gradient__white($deg: 0deg) {
+//     background: rgb(255,255,255);
+//     background: -moz-linear-gradient($deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+//     background: -webkit-linear-gradient($deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+//     background: linear-gradient($deg, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+// }
+
+// Shadow
+@mixin box-shadow__main {
+    box-shadow: 0px 1px 5px 1px rgba(0,0,0,.1);
+    // -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    // -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+// Text
+@mixin title__h1($font-color: $font-color__dark, $weight: 700) {
+    font-size: 12rem;
+    font-weight: $weight;
+    color: $font-color;
+}
+
+@mixin title__h2($font-color: $font-color__dark, $weight: 600) {
+    font-size: 4.8rem;
+    font-weight: $weight;
+    color: $font-color;
+}
+
+@mixin title__h3($font-color: $font-color__dark, $weight: 600) {
+    font-size: 3.2rem;
+    font-weight: $weight;
+    color: $font-color;
+}
+
+@mixin paragraph__p1($font-color: $font-color__subdark, $weight: 400) {
+    font-size: 1.8rem;
+    font-weight: $weight;
+    color: $font-color;
+    // line-height: 20px;
+}
+    
+@mixin paragraph__p2($font-color: $font-color__subdark, $weight: 400) {
+    font-size: 1.4rem;
+    font-weight: $weight;
+    color: $font-color;
+    // line-height: 20px;
+}
+
+@mixin paragraph__p3($font-color: $font-color__subdark, $weight: 400) {
+    font-size: 1rem;
+    font-weight: $weight;
+    color: $font-color;
+    line-height: 20px;
+}
+
+// Padding
+@mixin padding__safe {
+    padding: 0 25px;
+    box-sizing: content-box;
+}
+
+// Transition
+@mixin transition__default($time: ease, $duration: $transition-duration__hover) {
+    transition: $time $duration;
+}

@@ -1,0 +1,31 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+
+.elementLogo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 190px;
+    span {
+        width: 1px;
+        background-color: $background-color__sublight;
+        height: 20px;
+    }
+}
+
+.elementLogo__img {
+    font-size: 5.4rem;
+}
+
+.elementLogo__text {
+    h2 {
+        @include paragraph__p1;
+        margin-bottom: 4px;
+        font-weight: 600;
+        color: $font-color__accent;
+    }
+    li {
+        @include paragraph__p2;
+    }
+}
