@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setTheme } from "./redux/slices/theme/themeSlice";
 
 import SectionIntro from "@/components/sections/sectionIntro";
+import SectionConveyer from "@/components/sections/sectionConveyer";
 
 export default function Home() {
 
@@ -23,7 +24,11 @@ export default function Home() {
 
   return (
     <main data-theme={theme ? "dark" : "light"} className={"_main"}>
-      <SectionIntro />
+      <SectionIntro button={
+        {text: "Contact me", href: "https://google.com"}
+      }
+      />
+      <SectionConveyer />
     </main>
   );
 }

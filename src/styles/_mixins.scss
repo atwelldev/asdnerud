@@ -40,7 +40,7 @@
 }
 
 // Text
-@mixin title__h1($font-color: $font-color__dark, $weight: 700) {
+@mixin title__h1($font-color: $font-color__sublight, $weight: 700) {
     font-size: 12rem;
     font-weight: $weight;
     color: $font-color;
@@ -62,14 +62,14 @@
     font-size: 1.8rem;
     font-weight: $weight;
     color: $font-color;
-    // line-height: 20px;
+    line-height: 20px;
 }
     
 @mixin paragraph__p2($font-color: $font-color__subdark, $weight: 400) {
     font-size: 1.4rem;
     font-weight: $weight;
     color: $font-color;
-    // line-height: 20px;
+    line-height: 20px;
 }
 
 @mixin paragraph__p3($font-color: $font-color__subdark, $weight: 400) {

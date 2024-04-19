@@ -2,7 +2,7 @@ import styles from "./elementButton.module.scss";
 
 import { IElement } from "../_interfaces";
 
-interface IElementButton extends IElement {
+export interface IElementButton extends IElement {
     href: string;
     text: string;
 }
@@ -12,7 +12,8 @@ export default function ElementButton(props: IElementButton) {
         <button
             className={styles.elementButton + ` ${props.className?.map(e => e.trim()).join(" ")}`}
         >
-            {props.text}
+            <div></div>
+            <p>{props.text}</p>
         </button>
     )
 }

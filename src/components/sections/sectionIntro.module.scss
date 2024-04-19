@@ -3,30 +3,64 @@
 
 
 .sectionIntro  {
-    
 }
 
 .sectionIntro__container {
+    height: 100vh;
+    position: relative;
+    @include padding__safe;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .sectionIntro__text {
     max-width: 600px;
     h6 {
-        @include paragraph__p3($font-color: $font-color__accent);
-        
+        @include paragraph__p2($font-color: $font-color__accent);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        span {
+            margin-left: 10px;
+            height: 1px;
+            width: 50px;
+            background-color: $background-color__accent;
+        }
     }
 
     h2 {
         @include title__h2;
+        margin-bottom: 40px;
     }
-    p {
+    >p {
         @include paragraph__p1;
+        margin-bottom: 50px;
     }
 }
 
 .sectionIntro__social {
-    width: 200px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 50px;
+    p {
+        @include paragraph__p1;
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+    ul {
+        display: flex;
+        li:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+}
+
+.sectionIntro__backtitle {
+    top: 80px;
+    left: -120px;
+    font-size: 32rem !important;
 }
