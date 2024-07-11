@@ -1,0 +1,40 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+// Flex-grow и stretch
+
+.elementBanner {
+    background-color: $background-color__light;
+    // flex-basis: 600px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    // flex-grow: 1;
+    // @include box-shadow__default;
+    border: 1px solid $background-color__grey;
+    border-radius: $border-radius__md;
+    position: relative;
+    padding: $padding__md;
+    cursor: pointer;
+    @include transition__default;
+    h2 {
+        @include paragraph__lg;
+        color: $font-color__light;
+        margin-bottom: $margin__md;
+    }
+
+    p {
+        @include paragraph__md;
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+@media (pointer: fine) {
+    .elementBanner:hover {
+        @include box-shadow__default;
+    }
+}

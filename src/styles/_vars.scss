@@ -1,48 +1,49 @@
-// Background 
-    // color
-    // light-theme
-$background-color__dark:      #40424F;
-$background-color__subdark:   #74778B;
-$background-color__light:     #ffffff;
-$background-color__sublight:  #E6E7EE;
-$background-color__accent:    #ff4420; 
-    // dark-theme
+// xs sm md lg xl
+
+// Background
+// color
+// light-theme
+$background-color__dark: #1b1d26;
+$background-color__subdark: #7b7d8f;
+$background-color__grey: #e2e3ed;
+$background-color__lightgrey: #f6f6fd;
+$background-color__light: #ffffff;
+$background-color__sublight: #dfdfe8;
+$background-color__accent: #ff0f00;
+// dark-theme
 // $bgc-dark: black;
 
 // Text
-    // color
-$font-color__dark:     #40424F;
-$font-color__subdark:  #74778B;
-$font-color__light:    #ffffff;       
-$font-color__sublight: #E6E7EE;    
-$font-color__accent:   #ff4420;   
+// color
+$font-color__dark: #1b1d26;
+$font-color__subdark: #595b6e;
+$font-color__light: #ffffff;
+$font-color__sublight: #dfdfe8;
+$font-color__accent: #ff0f00;
 
 // Margins
-    // margin-bottom
-$margin-bottom__label: 10px;
-$margin-bottom__title_h1: 30px;
-$margin-bottom__title_h2: 20px;
-$margin-bottom__paragraph: 20px;
+// margin-bottom
+$margin__lg: 40px;
+$margin__md: 20px;
+$margin__sm: 10px;
 
 // Box
-    // padding
-$padding__block: 40px;
-$padding__smblock: 20px;
-    // border
-$border__main: 1px solid rgba(0,0,0,.2);
-    // radius
+// padding
+$padding__md: 30px;
+$padding__sm: 20px;
+// border
+$border__main: 1px solid rgba(0, 0, 0, 0.2);
+// radius
 // $border-radius__xsblock: 2px; // shop
-$border-radius__smblock: 16px;
-$border-radius__block: 32px;
-    // height
-$height__smblock: 45px;
+$border-radius__md: 4px;
+$border-radius__sm: 2px;
+// height
+$height__md: 40px;
 // Animation
-$animation-duration__main: 1s;
+$animation-duration__default: 1s;
+$animation-duration__slider: 5s;
 
 // Hover
-$transition-duration__hover: .3s;
-
-
-
-
-
+$transition-duration__lg: 1s;
+$transition-duration__md: 0.5s;
+$transition-duration__sm: 0.3s;

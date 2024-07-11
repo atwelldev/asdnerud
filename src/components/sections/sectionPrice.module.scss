@@ -1,0 +1,90 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+.sectionPrice {
+}
+
+.sectionPrice__container {
+}
+.SectionPrice__nav {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    ul {
+        display: flex;
+        align-items: center;
+        border-bottom: dashed 1px $background-color__sublight;
+        li {
+            position: relative;
+
+            padding-bottom: 10px;
+            cursor: pointer;
+            &:after {
+                z-index: 2;
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 0%;
+                height: 2px;
+                background-color: $background-color__accent;
+                @include transition__default;
+            }
+            @include paragraph__md;
+            font-weight: 500;
+        }
+        li:hover {
+            color: $font-color__accent;
+            &:after {
+                width: 100%;
+            }
+        }
+        li:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        li._active {
+            color: $font-color__accent;
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.sectionPrice__table_header {
+    @include paragraph__md;
+    font-weight: 600;
+    padding: 10px 0 20px 0;
+}
+.sectionPrice__table_row {
+    @include paragraph__sm;
+    padding: 10px 0;
+}
+
+.sectionPrice__table {
+    width: 100%;
+    padding: $padding__md;
+    background-color: $background-color__light;
+    @include box-shadow__default;
+    ul {
+        width: 100%;
+        li:nth-child(even) {
+            background-color: $background-color__lightgrey;
+        }
+        li {
+            &:not(:last-child) {
+                // border-bottom: solid $background-color__grey 1px;
+            }
+            // text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            span {
+                width: 230px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

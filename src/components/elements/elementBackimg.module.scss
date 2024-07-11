@@ -1,0 +1,16 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.elementBackimg {
+    // overflow: hidden;
+    // transform: rotate(45deg);
+    // border-radius: 100px;
+    // background-color: red;
+    // width: 800px;
+    // height: 800px;
+    border-radius: 100%;
+    // overflow: hidden !important;
+    img {
+        // transform: rotate(-45deg) translate(0, -100px);
+    }
+}

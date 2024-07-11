@@ -1,9 +1,2 @@
 @import "../styles/mixins";
 @import "../styles/vars";
-
-
-.ss {
-    h1 {
-        @include title__h2;
-    }
-}

@@ -1,66 +1,235 @@
 @import "../../styles/vars";
 @import "../../styles/mixins";
 
-
-.sectionIntro  {
+.sectionIntro {
+    height: 100vh;
+    position: relative;
 }
 
 .sectionIntro__container {
     height: 100vh;
+
     position: relative;
     @include padding__safe;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-.sectionIntro__text {
-    max-width: 600px;
-    h6 {
-        @include paragraph__p2($font-color: $font-color__accent);
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        span {
-            margin-left: 10px;
-            height: 1px;
-            width: 50px;
-            background-color: $background-color__accent;
-        }
-    }
-
-    h2 {
-        @include title__h2;
-        margin-bottom: 40px;
-    }
-    >p {
-        @include paragraph__p1;
+    // overflow: visible !important;
+    // flex-direction: column;
+    .sectionIntro__text {
         margin-bottom: 50px;
+        z-index: 2;
+        max-width: 500px;
+        // text-align: left !important;
+        h2 {
+            @include title__md;
+            margin-bottom: 30px;
+            width: 100%;
+            white-space: pre;
+            span {
+                color: $font-color__accent;
+            }
+        }
+        > p {
+            width: 100%;
+            @include paragraph__md;
+            // margin-bottom: 50px;
+        }
     }
 }
+.sectionIntro__swiper {
+    cursor: grabbing;
+    // overflow: visible !important;
+    position: relative;
+}
 
-.sectionIntro__social {
-    width: 250px;
+.sectionIntro__tags {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 50px;
-    p {
-        @include paragraph__p1;
-        &:not(:last-child) {
-            margin-bottom: 5px;
-        }
+
+    li:not(:last-child) {
+        margin-right: 15px;
     }
-    ul {
+    li {
         display: flex;
-        li:not(:last-child) {
-            margin-right: 10px;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 15px;
+        border-radius: 500px;
+        border: solid 1px $background-color__subdark;
+        @include paragraph__sm;
+        font-size: 1.2rem;
+    }
+    li[data-type="discount"] {
+        // background-color: rgb(65, 231, 109);
+        // border: none;
+        border-color: $font-color__accent;
+        color: $font-color__accent;
+    }
+    margin-bottom: 20px;
+}
+
+.sectionIntro__txtbutton {
+    margin-top: 40px;
+
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    > p {
+        @include paragraph__md;
+    }
+    button {
+        margin-right: 20px;
+    }
+}
+
+.sectionIntro__slide {
+    position: relative;
+}
+
+.sectionIntro__slide_img {
+    position: absolute;
+    top: 0;
+    right: -200px;
+}
+
+.sectionIntro__backimg {
+}
+
+.sectionIntro__whiteFade {
+    height: 200vh;
+    background-color: $background-color__light;
+    opacity: 0.9;
+    // background-color: red;
+    z-index: 1;
+    width: 60%;
+    position: absolute;
+    top: -500px;
+    transform: rotate(30deg);
+    &:nth-child(1) {
+        left: -150px;
+    }
+    &:nth-child(2) {
+        right: -300px;
+        width: 30%;
+        height: 250vh;
+    }
+}
+
+.sectionIntro__nav {
+    position: absolute;
+    width: 100%;
+    bottom: 80px;
+    left: 0;
+    z-index: 5;
+    ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // background-color: $background-color__light;
+
+        border-radius: $border-radius__md;
+        // overflow: hidden;
+        @include filter-blur__default;
+        li {
+            cursor: pointer;
+            border-radius: $border-radius__md;
+            height: 70px;
+            width: 15%;
+            padding: 15px;
+            overflow: hidden;
+            // transition: ease $animation-duration__default;
+            transition: width $animation-duration__default ease,
+                background-color $transition-duration__sm ease,
+                box-shadow $transition-duration__sm ease;
+            text-wrap: nowrap;
+            display: flex;
+            flex-grow: 1;
+            // justify-content: space-between;
+            align-items: center;
+            position: relative;
+            &:not(:last-child) {
+                // border-right: 0.5px rgb(222, 222, 222) solid;
+            }
+
+            div:first-child {
+                margin-right: 15px;
+                h3 {
+                    margin-bottom: 5px;
+                    font-size: 1.6rem;
+                    color: $font-color__dark;
+                    font-weight: 600;
+                }
+                p {
+                    font-size: 1.4rem;
+                    color: $font-color__subdark;
+                    font-weight: 400;
+                }
+                width: 30%;
+            }
+            div:last-child {
+                // width: 70%;
+                max-width: 0%;
+                overflow: hidden;
+                height: 100%;
+                transition: ease $animation-duration__default;
+                opacity: 0;
+                display: flex;
+                align-items: center;
+                p {
+                    font-size: 1.4rem;
+                    white-space: pre;
+                    color: $font-color__subdark;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        li:nth-child(2) {
+            width: 40%;
+            @include box-shadow__default;
+            background-color: $background-color__light;
+            border-radius: $border-radius__md;
+            position: relative;
+            &::after {
+                content: "";
+                border-radius: 2px;
+                position: absolute;
+                display: block;
+                animation: linear timeLine infinite alternate
+                    $animation-duration__slider;
+                height: 2px;
+                width: 0px;
+                top: 0;
+                left: 0;
+                background-color: $background-color__accent;
+            }
+            div:last-child {
+                max-width: 100%;
+                opacity: 1;
+                margin-left: 20px;
+            }
+        }
+        @include box-shadow__default;
+    }
+}
+
+@media (pointer: fine) {
+    .sectionIntro__nav {
+        ul {
+            li:hover {
+                background-color: $background-color__light;
+                @include box-shadow__default;
+                z-index: 10;
+            }
         }
     }
 }
 
-.sectionIntro__backtitle {
-    top: 80px;
-    left: -120px;
-    font-size: 32rem !important;
+@keyframes timeLine {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }

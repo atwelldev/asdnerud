@@ -4,25 +4,29 @@
 
 // Document
 html {
-    font-family: "Nunito Sans", "PT sans", 'Courier New', Courier, monospace !important;
+    font-family: "Nunito Sans", "PT sans", "Courier New", Courier, monospace !important;
     font-size: 10px;
     scroll-behavior: smooth;
-    
+    background-color: $background-color__light;
 }
 
 // Placeholder
-::-webkit-input-placeholder { /* WebKit browsers */
+::-webkit-input-placeholder {
+    /* WebKit browsers */
     color: $font-color__subdark;
- }
- :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+}
+:-moz-placeholder {
+    /* Mozilla Firefox 4 to 18 */
     color: $font-color__subdark;
- }
- ::-moz-placeholder { /* Mozilla Firefox 19+ */
+}
+::-moz-placeholder {
+    /* Mozilla Firefox 19+ */
     color: $font-color__subdark;
- }
- :-ms-input-placeholder { /* Internet Explorer 10+ */
+}
+:-ms-input-placeholder {
+    /* Internet Explorer 10+ */
     color: $font-color__subdark;
- }
+}
 
 ._container {
     max-width: 1200px;

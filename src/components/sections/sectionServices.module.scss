@@ -1,0 +1,32 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.sectionServices__container {
+    @include padding__safe;
+}
+
+.sectionServices__banners {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionServices__row {
+    display: flex;
+    height: 220px;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    > div:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+.s1 {
+    // flex-basis: 70%;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.s2 {
+    flex-basis: 300px;
+}

@@ -1,0 +1,48 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.sectionWrite {
+}
+
+.sectionWrite__container {
+    @include padding__safe;
+}
+
+.sectionWrite__form {
+    width: 100%;
+    background-color: $background-color__light;
+    @include box-shadow__default;
+    padding: $padding__md;
+    h2 {
+        @include title__md;
+        margin-bottom: $margin__md;
+    }
+    .sectionWrite__checkbox {
+        @include paragraph__xs;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        white-space: nowrap;
+        margin-right: $margin__md;
+    }
+    form {
+        width: 500px;
+        @include form__default;
+
+        input:first-child {
+            width: 100%;
+        }
+    }
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: $margin__md;
+    }
+    textarea {
+        height: 100px;
+        width: 100%;
+        margin-top: $margin__md;
+    }
+}

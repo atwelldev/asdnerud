@@ -1,0 +1,135 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.sectionContact {
+}
+
+.sectionContact__container {
+    @include padding__safe;
+}
+
+.sectionContact__formBlock {
+    background-color: $background-color__light;
+    @include box-shadow__default;
+    padding: $padding__md;
+    display: flex;
+    justify-content: space-between;
+    form {
+        width: 500px;
+        @include form__default;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        input {
+        }
+        div:first-child {
+            input {
+                width: 220px;
+            }
+            margin-bottom: $margin__md;
+        }
+        div:last-child {
+            .sectionContact__checkbox {
+                display: flex;
+                align-items: center;
+                @include paragraph__xs;
+                white-space: nowrap;
+                input {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+.sectionContact__text {
+    width: 400px;
+    h3 {
+        @include title__sm;
+        margin-bottom: 20px;
+        white-space: nowrap;
+    }
+    p {
+        @include paragraph__md;
+    }
+}
+
+.sectionContact__order {
+    ul {
+        margin-left: 200px;
+        overflow: hidden;
+
+        height: 800px;
+        // width: 50px;
+        position: relative;
+        padding-top: 50px;
+        li {
+            &:after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 400px;
+                border-bottom: dashed 1px $background-color__subdark;
+                top: 50%;
+                transform: translate(0, -100%);
+                z-index: -1;
+            }
+            z-index: 2;
+            position: relative;
+            display: flex;
+            align-items: center;
+
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
+            h2 {
+                background-color: $background-color__light;
+                border: 1px dashed $background-color__subdark;
+                border-radius: 50%;
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include title__md;
+                position: absolute;
+            }
+        }
+        // Вертикальная линия
+        li:first-child h2::before {
+            content: "";
+            display: block;
+            border-right: 1px dashed $background-color__subdark;
+            position: absolute;
+            height: 1000px;
+            width: 1px;
+            left: 50%;
+            top: -200px;
+            transform: translate(-50%, 0);
+            z-index: -1;
+        }
+    }
+}
+
+.sectionContact__rightText {
+    h3 {
+        @include title__md;
+        white-space: nowrap;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 50px;
+    }
+    p {
+        @include paragraph__sm;
+        height: 80px;
+    }
+
+    margin-left: 200px;
+    width: 500px;
+    align-self: flex-end;
+}

@@ -1,3 +1,45 @@
 @import "../../styles/mixins";
 @import "../../styles/vars";
 
+.elementText {
+    width: 100%;
+    &[data-position="right"] {
+        text-align: end;
+    }
+
+    h3 {
+        // @include paragraph__md($font-color: $font-color__accent);
+        @include paragraph__sm;
+        margin-bottom: $margin__sm - 3px;
+        display: flex;
+        align-items: center;
+        span {
+            // content: "";
+            // width: 50px;
+            // background-color: $background-color__accent;
+            // height: 1px;
+            // margin-left: $margin__sm;
+        }
+    }
+
+    h1 {
+        @include title__md;
+        margin-bottom: $margin__md;
+    }
+    > p {
+        @include paragraph__md;
+        // margin-bottom: 50px;
+    }
+
+    &[data-color="light"] {
+        h3 {
+            color: $font-color__sublight;
+        }
+        h1 {
+            color: $font-color__light;
+        }
+        p {
+            color: $font-color__sublight;
+        }
+    }
+}

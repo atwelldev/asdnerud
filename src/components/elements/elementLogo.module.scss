@@ -1,31 +1,57 @@
 @import "../../styles/mixins";
 @import "../../styles/vars";
 
-
 .elementLogo {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 190px;
-    span {
-        width: 1px;
-        background-color: $background-color__sublight;
-        height: 20px;
-    }
+    // width: 190px;
+    height: 60px;
 }
 
 .elementLogo__img {
-    font-size: 5.4rem;
+    overflow: hidden;
+    svg {
+        // height: 50px;
+        width: 40px;
+    }
+}
+.elementLogo__line {
+    height: 40%;
+    width: 1px;
+    background-color: $background-color__subdark;
+    margin: 0 $margin__sm;
 }
 
 .elementLogo__text {
+    width: 180px;
     h2 {
-        @include paragraph__p1;
-        margin-bottom: 4px;
-        font-weight: 600;
-        color: $font-color__accent;
+        @include title__sm;
+        font-weight: 500;
+        letter-spacing: 3px;
+        margin-bottom: 2px;
+        span {
+            font-size: 1.2rem;
+            letter-spacing: 0px;
+        }
     }
-    li {
-        @include paragraph__p2;
+    ul {
+        li {
+            @include paragraph__sm;
+            display: none;
+            white-space: nowrap;
+            @include animation__default($name: textFade);
+        }
+        li._active {
+            display: block;
+        }
+    }
+}
+
+@keyframes textFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

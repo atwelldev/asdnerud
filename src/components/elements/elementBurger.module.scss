@@ -1,16 +1,17 @@
 @import "../../styles/vars";
 @import "../../styles/mixins";
 
-
 .elementBurger {
     width: 20px;
     height: 20px;
     position: relative;
     cursor: pointer;
-    span, &::before, &::after {
+    span,
+    &::before,
+    &::after {
         content: "";
         position: absolute;
-        background-color: $background-color__subdark;
+        background-color: $background-color__dark;
         height: 2px;
         border-radius: 10px;
         @include transition__default;
@@ -33,7 +34,9 @@
     }
 
     &:hover {
-        span, &::after, &::before {
+        span,
+        &::after,
+        &::before {
             width: 100%;
             background-color: $background-color__accent;
         }

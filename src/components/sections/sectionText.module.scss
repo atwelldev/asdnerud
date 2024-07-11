@@ -1,0 +1,45 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.sectionText {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    z-index: 2;
+}
+
+.sectionText__container {
+    @include padding__safe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.sectionText__text {
+    max-width: 400px;
+    z-index: 2;
+}
+
+.sectionText__back {
+}
+.sectionText__backimg {
+}
+
+.sectionText__whiteFade {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    // background-color: red;
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    // right: -100px;
+    // transform: rotate(-30deg);
+}
+
+.sectionText__img {
+    overflow: hidden;
+    z-index: 2;
+    border-radius: $border-radius__md;
+    @include box-shadow__default;
+}

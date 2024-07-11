@@ -1,9 +1,32 @@
 @import "../../styles/mixins";
 @import "../../styles/vars";
 
-
 .sectionConveyer {
+    @include box-shadow__default;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+.sectionConveyer__swiper {
     > div {
-        transition-timing-function: linear;
+        transition-timing-function: linear !important;
+        width: 100%;
     }
+    width: 100%;
+    height: 100%;
+    transition-timing-function: linear;
+    @include paragraph__md;
+    div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.sectionConveyer__slide {
+    width: 200px !important;
+    text-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

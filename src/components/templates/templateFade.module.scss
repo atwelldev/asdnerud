@@ -1,0 +1,13 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.templateFade {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(28, 39, 43, 0.4);
+    @include filter-blur__default;
+    z-index: 1000;
+}

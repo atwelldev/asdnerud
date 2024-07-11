@@ -1,0 +1,123 @@
+@import "../../styles/mixins";
+@import "../../styles/vars";
+
+.templatePopup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 100;
+    animation: popupAnimation $transition-duration__md ease;
+    pointer-events: none; // удалить
+}
+
+.templatePopup__fade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: $background-color__dark;
+    opacity: 0.7;
+    // @include filter-blur__default;
+}
+
+.templatePopup__body {
+    position: absolute;
+    height: 400px;
+    // width: 1000px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 101;
+
+    display: flex;
+    // justify-content: flex-start;
+    // overflow: hidden;
+}
+
+.templatePopup__body_left {
+    @include box-shadow__default;
+    border-radius: $border-radius__md 0 0 $border-radius__md;
+    overflow: hidden;
+    width: 400px;
+    height: 100%;
+    position: relative;
+    padding: $padding__md;
+}
+
+.templatePopup__body_img {
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        background-color: $background-color__dark;
+        z-index: 2;
+    }
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.templatePopup__body_right {
+    border-radius: 0 $border-radius__md $border-radius__md 0;
+    @include box-shadow__default;
+
+    box-sizing: border-box;
+    white-space: nowrap;
+    transition-delay: 1s;
+    background-color: $background-color__light;
+    height: 100%;
+    overflow: hidden;
+    max-width: 600px;
+    animation: popupRightAnimation $transition-duration__lg ease;
+    form {
+        width: 600px;
+        padding: $padding__md;
+    }
+}
+
+@keyframes popupAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.templatePopup._active {
+    display: flex;
+}
+
+// @keyframes popupRightAnimation {
+//     0% {
+//         max-width: 0px;
+//     }
+//     10% {
+//         max-width: 0px;
+//     }
+//     100% {
+//         max-width: 600px;
+//     }
+// }
+
+@keyframes popupRightAnimation {
+    0% {
+        max-width: 0px;
+    }
+    40% {
+        max-width: 0px;
+    }
+    100% {
+        max-width: 600px;
+    }
+}

@@ -1,0 +1,59 @@
+@import "../../styles/vars";
+@import "../../styles/mixins";
+
+.sectionReviews__container {
+    @include padding__safe;
+}
+
+.sectionReviews {
+}
+
+.sectionReviews__swiper {
+}
+
+.sectionReviews_slide {
+    cursor: grabbing;
+    padding: $padding__sm 0;
+}
+.sectionReviews__text {
+    max-width: 800px;
+    h2 {
+        @include title__md;
+        margin-bottom: $margin__md;
+    }
+    h3 {
+        @include paragraph__sm;
+        margin-bottom: $margin__md;
+    }
+    p {
+        @include paragraph__md;
+    }
+}
+.sectionReviews__card {
+    padding: $padding__md;
+    // height: 200px;
+    background-color: $background-color__light;
+    width: 100%;
+    border: solid 1px $background-color__grey;
+    border-radius: $border-radius__md;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transition: ease $transition-duration__sm;
+}
+
+.sectionReviews__img {
+    position: absolute;
+    width: 300px;
+    @include box-shadow__default;
+    height: 100%;
+    right: 0;
+    top: 0;
+}
+
+@media (pointer: fine) {
+    .sectionReviews__card:hover {
+        @include box-shadow__default;
+    }
+}
