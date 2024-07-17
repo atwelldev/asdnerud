@@ -31,7 +31,7 @@
             }
         }
         li {
-            @include transition__default;
+            @include transition__hover;
         }
         li:hover {
             color: $font-color__accent;

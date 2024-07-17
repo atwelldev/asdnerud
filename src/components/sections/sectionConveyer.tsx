@@ -27,48 +27,36 @@ export default function SectionConveyer() {
                     disableOnInteraction: false,
                 }}
             >
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Скидки до 40%
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Бесплатная доставка
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    75+ проектов
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Широкий ассортимент
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    12+ лет опыта
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Комплексное обслуживание
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Широкий ассортимент
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Скидки до 40%
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Бесплатная доставка
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    75+ проектов
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Широкий ассортимент
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    12+ лет опыта
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Комплексное обслуживание
-                </SwiperSlide>
-                <SwiperSlide className={styles.sectionConveyer__slide}>
-                    Широкий ассортимент
-                </SwiperSlide>
+                {[
+                    { id: 1, text: "Быстрая доставка", num: "" },
+                    { id: 2, text: "Постоянные акции", num: "" },
+                    { id: 3, text: "Многолетний опыт", num: "" },
+                    { id: 4, text: "Всегда низкие цены", num: "" },
+                    { id: 5, text: "Гарантия качества", num: "" },
+                    { id: 6, text: "Скидки до", num: "10%" },
+                    { id: 6, text: "Сотрудничество", num: "" },
+                    { id: 6, text: "Большой ассортимент", num: "" },
+                ].map((e) => {
+                    return (
+                        <div key={e.id}>
+                            <SwiperSlide
+                                className={styles.sectionConveyer__slide}
+                            >
+                                {e.text}
+                                {e.num != "" && <span>&nbsp;{e.num}</span>}
+                            </SwiperSlide>
+                            <SwiperSlide
+                                className={
+                                    styles.sectionConveyer__slide +
+                                    " " +
+                                    styles.sectionConveyer__dot
+                                }
+                            >
+                                •
+                            </SwiperSlide>
+                        </div>
+                    );
+                })}
             </Swiper>
         </section>
     );

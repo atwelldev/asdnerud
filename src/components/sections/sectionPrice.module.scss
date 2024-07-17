@@ -13,6 +13,7 @@
         align-items: center;
         border-bottom: dashed 1px $background-color__sublight;
         li {
+            @include transition__hover;
             position: relative;
 
             padding-bottom: 10px;
@@ -25,9 +26,10 @@
                 left: 50%;
                 transform: translate(-50%, 0);
                 width: 0%;
+                border-radius: 50px;
                 height: 2px;
                 background-color: $background-color__accent;
-                @include transition__default;
+                @include transition__hover;
             }
             @include paragraph__md;
             font-weight: 500;

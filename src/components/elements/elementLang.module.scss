@@ -5,8 +5,10 @@
     cursor: pointer;
     img {
         margin-right: 7px;
-        border-radius: 4px;
-        @include box-shadow__default;
+        border-radius: 2px;
+        border: solid 1px $background-color__grey;
+        @include box-shadow__default($y: 1px);
+        // box-shadow: 1px 1px 1px black;
     }
     @include paragraph__md;
     display: flex;

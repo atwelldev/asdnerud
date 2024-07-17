@@ -111,7 +111,7 @@
 }
 
 // Transition
-@mixin transition__default($time: ease, $duration: $transition-duration__sm) {
+@mixin transition__hover($time: ease, $duration: $transition-duration__sm) {
     transition: $time $duration;
 }
 @mixin transition__animation($time: ease, $duration: $transition-duration__lg) {
@@ -127,23 +127,39 @@
 }
 
 // Filter
-@mixin filter-blur__default($opacity: 0.5) {
-    background-color: rgba(255, 255, 255, $opacity);
+@mixin filter-blur__default($color: rgba(255, 255, 255, 0.5)) {
+    background-color: $color;
     backdrop-filter: blur(3px);
+}
+
+// Border
+@mixin border__bottom() {
+    border-bottom: 1px solid $background-color__grey;
 }
 
 // Form
 @mixin form__default() {
+    input,
+    textarea {
+        @include transition__hover;
+    }
+    input:focus,
+    textarea:focus {
+        @include box-shadow__default($y: 1px);
+        border-color: rgba(255, 255, 255, 0);
+    }
     [type="text"],
     [type="password"] {
-        padding: 0 10px;
+        padding: $padding__sm - 5px;
         height: 35px;
-        border-bottom: 1px solid $background-color__grey;
+        border: 1px solid $background-color__grey;
+        border-radius: $border-radius__sm;
         @include paragraph__md;
     }
     textarea {
-        padding: 0 10px;
-        border-bottom: 1px solid $background-color__grey;
+        padding: $padding__sm - 5px;
+        border: 1px solid $background-color__grey;
+        border-radius: $border-radius__sm;
         @include paragraph__md;
     }
     [type="checkbox"] {
@@ -151,5 +167,8 @@
         // border-color: red;
         width: 15px;
         height: 15px;
+    }
+
+    &[data-style="dark"] {
     }
 }

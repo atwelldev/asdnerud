@@ -13,21 +13,21 @@ export default function SectionServices() {
                     <div className={styles.s1}>
                         <div className={styles.sectionServices__row}>
                             <ElementBanner
-                                h2="Озвучка для AVR"
-                                p="Лушчшая озвучка для AVR"
+                                title="Озвучка для AVR"
+                                paragraph="Лушчшая озвучка для AVR"
                                 img="/svg/dots.svg"
                             />
                         </div>
                         <div className={styles.sectionServices__row}>
                             <ElementBanner
-                                h2="Озвучка для AVR"
-                                p="Лушчшая озвучка для AVR"
+                                title="Озвучка для AVR"
+                                paragraph="Лушчшая озвучка для AVR"
                                 img="/svg/dots.svg"
                             />
 
                             <ElementBanner
-                                h2="Озвучка для AVR"
-                                p="Лушчшая озвучка для AVR"
+                                title="Озвучка для AVR"
+                                paragraph="Лушчшая озвучка для AVR"
                                 img="/svg/dots.svg"
                             />
                         </div>
@@ -35,8 +35,8 @@ export default function SectionServices() {
 
                     <div className={styles.s2}>
                         <ElementBanner
-                            h2="Озвучка для AVR"
-                            p="Лушчшая озвучка для AVR"
+                            title="Озвучка для AVR"
+                            paragraph="Лушчшая озвучка для AVR"
                             img="/svg/dots.svg"
                         />
                     </div>

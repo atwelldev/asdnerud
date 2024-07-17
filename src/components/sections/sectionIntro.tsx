@@ -19,56 +19,145 @@ export interface ISectionIntro extends ISection {
 }
 import { IElementButton } from "../elements/elementButton";
 import ElementText, { IElementText } from "../elements/elementText";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ElementBanner from "../elements/elementBanner";
 import ElementBackimg from "../elements/elementBackimg";
 // import ElementSocial from "../elements/elementSocial";
 
 export default function SectionIntro(props: ISectionIntro) {
+    const [slide, setSlide] = useState(0);
+    const [img, setImg] = useState(1);
+
+    let bgcFade: any = useRef();
+    let swiper: any = useRef();
+
+    let animationTime = 1000;
+
+    // Инициализация слайдера
+    const [my_swiper, set_my_swiper] = useState(null);
+
     return (
         <section className={styles.sectionIntro}>
             <Swiper
+                // инициализируем swiper
+                onInit={(ev) => {
+                    set_my_swiper(ev);
+                }}
                 className={styles.sectionIntro__swiper}
                 modules={[Autoplay, EffectFade, Parallax]}
-                effect={"fade"}
-                fadeEffect={{
-                    crossFade: true,
-                }}
+                ref={swiper}
+                // effect={"fade"}
+                // fadeEffect={{
+                //     crossFade: true,
+                // }}
+                initialSlide={0}
                 spaceBetween={20}
                 slidesPerView={1}
-                // onSlideChange={() => console.log('slide change')}
+                onSlideChange={() => {
+                    // Current slide
+                    setSlide(my_swiper.activeIndex);
+
+                    // Img
+                    setTimeout(() => {
+                        setImg(my_swiper.activeIndex + 1);
+                    }, 300);
+                    console.log(slide);
+
+                    // Fade
+                    bgcFade.current.classList.toggle(styles._active);
+                    setTimeout(() => {
+                        bgcFade.current.classList.toggle(styles._active);
+                    }, 500);
+                }}
+                allowTouchMove={false}
                 // onSwiper={(swiper) => console.log(swiper)}
-                loop={true}
+                // loop={true}
                 speed={20}
                 autoplay={{
-                    delay: 2000,
-                    disableOnInteraction: false,
+                    delay: 7000,
+                    // disableOnInteraction: true,
                 }}
                 parallax={true}
             >
+                <div className={styles.sectionIntro__backimg}>
+                    {[
+                        { id: 1, img: "/img/mountain.webp" },
+                        { id: 2, img: "/img/cars.jpg" },
+                        { id: 3, img: "/img/aqua.jpg" },
+                        { id: 4, img: "/img/mountain.webp" },
+                        { id: 5, img: "/img/d.jpg" },
+                    ].map((e) => {
+                        return (
+                            <div
+                                key={e.id}
+                                className={
+                                    styles.sectionIntro__img +
+                                    " " +
+                                    (e.id == img ? styles._active : "")
+                                }
+                            >
+                                <ElementBackimg href={e.img} />
+                            </div>
+                        );
+                    })}
+                </div>
+
+                <div className={styles.sectionIntro__whiteFades} ref={bgcFade}>
+                    <div
+                        className={
+                            styles.sectionIntro__whiteFade_1 +
+                            " " +
+                            styles.sectionIntro__whiteFade
+                        }
+                    ></div>
+                    <div
+                        className={
+                            styles.sectionIntro__whiteFade_2 +
+                            " " +
+                            styles.sectionIntro__whiteFade
+                        }
+                    ></div>
+                </div>
+
                 {[
-                    "/img/mountain.webp",
-                    "/img/cars.jpg",
-                    "/img/aqua.jpg",
-                    "/img/cars.jpg",
-                    "/img/cars.jpg",
+                    {
+                        id: 1,
+                        img: "/img/mountain.webp",
+                        title: "Быстрая доставка нерудных материалов",
+                        subtitle: "Всегда качественно",
+                        paragraph:
+                            "Быстро доставим нерудные материалы в любую точку Российской Федерации, а также страны ближнего зарубежья.",
+                        tags: [
+                            { id: 1, text: "Распродажа", type: "discount" },
+                            { id: 2, text: "24/7", color: "dark" },
+                            { id: 3, text: "Качественно", color: "dark" },
+                        ],
+                        buttons: [
+                            {
+                                id: 1,
+                                text: "Заказать",
+                                style: "color",
+                                href: "/",
+                            },
+                            {
+                                id: 2,
+                                text: "Весь ассортимент",
+                                style: "text",
+                                href: "/",
+                            },
+                        ],
+                    },
+
+                    // { id: 2, img: "/img/cars.jpg" },
+                    // { id: 3, img: "/img/aqua.jpg" },
+                    // { id: 4, img: "/img/mountain.webp" },
+                    // { id: 5, img: "/img/cars.jpg" },
                 ].map((e) => {
                     return (
                         <SwiperSlide
                             className={styles.sectionIntro_slide}
-                            key={e}
+                            key={e.id}
                         >
-                            <div
-                                className={styles.sectionIntro__whiteFade}
-                            ></div>
-                            <div
-                                className={styles.sectionIntro__whiteFade}
-                            ></div>
-                            {/* Картинка на фоне */}
-                            <div className={styles.sectionIntro__backimg}>
-                                <ElementBackimg href={e} />
-                            </div>
-
                             {/* Основной контейнер */}
                             <div
                                 className={
@@ -78,8 +167,10 @@ export default function SectionIntro(props: ISectionIntro) {
                             >
                                 <div className={styles.sectionIntro__text}>
                                     <ul
-                                        data-swiper-parallax="-30"
-                                        data-swiper-parallax-duration="1000"
+                                        data-swiper-parallax="-80"
+                                        data-swiper-parallax-duration={
+                                            animationTime
+                                        }
                                         data-swiper-parallax-opacity="0"
                                         className={styles.sectionIntro__tags}
                                     >
@@ -88,16 +179,20 @@ export default function SectionIntro(props: ISectionIntro) {
                                         <li data-type="discount">Распродажа</li>
                                     </ul>
                                     <h2
-                                        data-swiper-parallax="-20"
-                                        data-swiper-parallax-duration="1000"
+                                        data-swiper-parallax="-50"
+                                        data-swiper-parallax-duration={
+                                            animationTime
+                                        }
                                         data-swiper-parallax-opacity="0"
                                     >
-                                        {e} &nbsp;
+                                        {e.id} &nbsp;
                                         <span>в мешках</span>
                                     </h2>
                                     <p
-                                        data-swiper-parallax="-10"
-                                        data-swiper-parallax-duration="1000"
+                                        data-swiper-parallax="-20"
+                                        data-swiper-parallax-duration={
+                                            animationTime
+                                        }
                                         data-swiper-parallax-opacity="0"
                                     >
                                         Компания «АСД-Неруд» с 2024 года
@@ -112,7 +207,9 @@ export default function SectionIntro(props: ISectionIntro) {
                                             styles.sectionIntro__txtbutton
                                         }
                                         data-swiper-parallax="-10"
-                                        data-swiper-parallax-duration="1000"
+                                        data-swiper-parallax-duration={
+                                            animationTime
+                                        }
                                         data-swiper-parallax-opacity="0"
                                     >
                                         <ElementButton
@@ -149,13 +246,13 @@ export default function SectionIntro(props: ISectionIntro) {
                                     id: 1,
                                     h: "Быстрая доставка",
                                     p1: "24/7 daily",
-                                    p2: "Компания «Интерстрой» с 2024 года занимается оптовой и розничной продажей нерудных материалов. Всегда в наличии песок, бетон, ",
+                                    p2: "Компания «Интерстрой» с 2024 года\nзанимается оптовой и розничной",
                                 },
                                 {
                                     id: 2,
                                     h: "Быстрая доставка",
                                     p1: "24/7 daily",
-                                    p2: "Компания «Интерстрой» с 2024 года занимается  оптовой и розничной продажей нерудных материалов. Всегда в наличии песок, бетон, ",
+                                    p2: "Компания «Интерстрой» с 2024 года\nзанимается оптовой и розничной",
                                 },
                                 {
                                     id: 3,
@@ -167,17 +264,27 @@ export default function SectionIntro(props: ISectionIntro) {
                                     id: 4,
                                     h: "Быстрая доставка",
                                     p1: "24/7 daily",
-                                    p2: "Компания «Интерстрой» с 2024 года занимается оптовой и розничной продажей нерудных материалов. Всегда в наличии песок, бетон, ",
+                                    p2: "Компания «Интерстрой» с 2024 года\nзанимается оптовой и розничной",
                                 },
                                 {
                                     id: 5,
                                     h: "Быстрая доставка",
                                     p1: "24/7 daily",
-                                    p2: "Компания «Интерстрой» с 2024 года занимается оптовой и розничной продажей нерудных материалов. Всегда в наличии песок, бетон, ",
+                                    p2: "Компания «Интерстрой» с 2024 года\nзанимается оптовой и розничной",
                                 },
                             ].map((e) => {
                                 return (
-                                    <li key={e.id}>
+                                    <li
+                                        key={e.id}
+                                        className={
+                                            e.id == slide + 1
+                                                ? styles._active
+                                                : ""
+                                        }
+                                        onClick={() => {
+                                            my_swiper.slideTo(e.id - 1);
+                                        }}
+                                    >
                                         <div>
                                             <h3>{e.h}</h3>
                                             <p>{e.p1}</p>

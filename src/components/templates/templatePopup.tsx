@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 export default function TemplatePopup() {
     const popupActive = useSelector((state: any) => state.popup.active);
+    const popupData = useSelector((state: any) => state.popup.data);
 
     return (
         <div
@@ -21,7 +22,7 @@ export default function TemplatePopup() {
             <div className={styles.templatePopup__body}>
                 <div className={styles.templatePopup__body_left}>
                     <ElementText
-                        title="Напишите нам"
+                        title={popupData}
                         color="light"
                         subtitle="Всегда на связи"
                     />

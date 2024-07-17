@@ -1,17 +1,18 @@
-"use client"; // УДАЛИТЬ
-
 import styles from "./elementBurger.module.scss";
 
 import { useDispatch } from "react-redux";
-import { setPopup } from "@/app/redux/slices/popupSlice";
+import { setMobileMenu } from "@/app/redux/slices/mobileMenuSlice";
+import { IElement } from "../_interfaces";
 
-export default function ElementBurger() {
+interface IElementBurger extends IElement {}
+
+export default function ElementBurger(props: IElementBurger) {
     const dispatch = useDispatch();
     return (
         <div
-            className={styles.elementBurger}
+            className={styles.elementBurger + ` ${props.className}`}
             onClick={() => {
-                dispatch(setPopup(""));
+                dispatch(setMobileMenu(""));
             }}
         >
             <span></span>

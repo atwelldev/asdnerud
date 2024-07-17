@@ -5,6 +5,7 @@ import themeReducer from "./slices/theme/themeSlice";
 import loadingReducer from "./slices/loadingSlice";
 import popupReducer from "./slices/popupSlice";
 import linksReducer from "./slices/linksSlice";
+import mobileMenuReducer from "./slices/mobileMenuSlice";
 
 export const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
         load: loadingReducer,
         popup: popupReducer,
         links: linksReducer,
+        mobile: mobileMenuReducer,
     },
 });
 

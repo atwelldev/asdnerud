@@ -27,11 +27,11 @@ export default function SectionReviews() {
                 }}
                 parallax={true}
             >
-                {["", "", ""].map((e) => {
+                {["", "", ""].map((e, i) => {
                     return (
                         <SwiperSlide
                             className={styles.sectionReviews_slide}
-                            key={e}
+                            key={i++}
                         >
                             {" "}
                             <div
@@ -44,7 +44,7 @@ export default function SectionReviews() {
                                     <div
                                         className={styles.sectionReviews__text}
                                     >
-                                        <h2>ООО "Агрохолдинг"</h2>
+                                        <h2>ООО Агрохолдинг</h2>
                                         <h3>Евгений Онегин, CEO</h3>
                                         <p>
                                             Доброго дня! Меня зовут Виталий, я

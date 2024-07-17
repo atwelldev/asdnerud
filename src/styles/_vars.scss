@@ -4,7 +4,7 @@
 // color
 // light-theme
 $background-color__dark: #1b1d26;
-$background-color__subdark: #7b7d8f;
+$background-color__subdark: #4d4f60;
 $background-color__grey: #e2e3ed;
 $background-color__lightgrey: #f6f6fd;
 $background-color__light: #ffffff;
@@ -16,7 +16,7 @@ $background-color__accent: #ff0f00;
 // Text
 // color
 $font-color__dark: #1b1d26;
-$font-color__subdark: #595b6e;
+$font-color__subdark: #4d4f60;
 $font-color__light: #ffffff;
 $font-color__sublight: #dfdfe8;
 $font-color__accent: #ff0f00;
@@ -26,6 +26,7 @@ $font-color__accent: #ff0f00;
 $margin__lg: 40px;
 $margin__md: 20px;
 $margin__sm: 10px;
+$margin__xs: 5px;
 
 // Box
 // padding
@@ -41,7 +42,7 @@ $border-radius__sm: 2px;
 $height__md: 40px;
 // Animation
 $animation-duration__default: 1s;
-$animation-duration__slider: 5s;
+$animation-duration__slider: 7s;
 
 // Hover
 $transition-duration__lg: 1s;

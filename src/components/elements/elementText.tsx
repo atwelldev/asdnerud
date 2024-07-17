@@ -12,10 +12,7 @@ export interface IElementText extends IElement {
 export default function ElementText(props: IElementText) {
     return (
         <div
-            className={
-                styles.elementText +
-                ` ${props.className?.map((e) => e.trim()).join(" ")}`
-            }
+            className={styles.elementText + ` ${props.className}`}
             data-position={props.position}
             data-color={props.color}
         >

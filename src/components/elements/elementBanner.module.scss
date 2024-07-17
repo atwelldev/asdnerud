@@ -16,7 +16,7 @@
     position: relative;
     padding: $padding__md;
     cursor: pointer;
-    @include transition__default;
+    @include transition__hover;
     h2 {
         @include paragraph__lg;
         color: $font-color__light;

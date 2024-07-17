@@ -6,9 +6,10 @@ import { useDispatch } from "react-redux";
 import { setLoading } from "@/app/redux/slices/loadingSlice";
 
 export interface IElementButton extends IElement {
-    href: string;
+    href?: string;
     text: string;
     style: "text" | "light" | "color";
+    onClick?: any;
 }
 
 export default function ElementButton(props: IElementButton) {
@@ -16,13 +17,8 @@ export default function ElementButton(props: IElementButton) {
 
     return (
         <button
-            className={
-                styles.elementButton +
-                ` ${props.className?.map((e) => e.trim()).join(" ")}`
-            }
-            onClick={() => {
-                dispatch(setLoading(""));
-            }}
+            onClick={props.onClick}
+            className={styles.elementButton + ` ${props.className}`}
             data-style={props.style}
         >
             <p>{props.text}</p>

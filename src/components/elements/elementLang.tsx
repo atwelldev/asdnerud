@@ -1,12 +1,15 @@
+import { IElement } from "../_interfaces";
 import styles from "./elementLang.module.scss";
 import Image from "next/image";
 
-export default function ElementLang() {
+interface IElementLang extends IElement {}
+
+export default function ElementLang(props: IElementLang) {
     return (
-        <div className={styles.elementLang}>
+        <div className={styles.elementLang + ` ${props.className}`}>
             <Image
                 src={
-                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
+                    "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg"
                 }
                 width={23}
                 height={15}

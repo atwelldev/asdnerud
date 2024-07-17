@@ -22,6 +22,7 @@ export default function SectionText() {
                 </div>
                 <div className={styles.sectionText__img}>
                     <Image
+                        alt="err"
                         src={"/img/mountain.webp"}
                         width={400}
                         height={400}

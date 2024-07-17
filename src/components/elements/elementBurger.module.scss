@@ -14,7 +14,7 @@
         background-color: $background-color__dark;
         height: 2px;
         border-radius: 10px;
-        @include transition__default;
+        @include transition__hover;
     }
 
     &::before {
